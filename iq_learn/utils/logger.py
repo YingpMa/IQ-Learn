@@ -6,7 +6,10 @@ import shutil
 import torch
 import torchvision
 import numpy as np
-from torch.utils.tensorboard import SummaryWriter
+try:
+	from torch.utils.tensorboard import SummaryWriter
+except Exception:
+	SummaryWriter = None
 from termcolor import colored
 
 COMMON_TRAIN_FORMAT = [
